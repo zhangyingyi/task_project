@@ -1,6 +1,6 @@
 <template>
   <div>
-    <el-form :label-position="labelPosition" label-width="180px" :model="form">
+    <el-form :label-position="labelPosition" label-width="100px" :model="form">
       <el-form-item label="姓名">
         <el-input v-model="form.name"></el-input>
       </el-form-item>
@@ -10,20 +10,23 @@
       <el-form-item label="任务难度">
         <el-input v-model="form.region"></el-input>
       </el-form-item>
-      <div class="block" style="margin-left:147px;">
+      <div class="block" style="margin-left:68px;">
         <span class="demonstration">日期</span>
         <el-date-picker v-model="form.value6" type="daterange" placeholder="选择日期范围">
         </el-date-picker>
       </div>
-      <el-button type="primary" style="margin-left: 50%;" @click="taskAdd">任务添加</el-button>
+      <el-button type="primary" style="margin-left:90%;" @click="editClick(item,item._id)">修改</el-button>
     </el-form>
   </div>
 </template>
 <script>
 export default {
+  props: ['tasksLisk'],
   data() {
     return {
+      my: this.tasksLisk,
       labelPosition: 'right',
+      apiUrl: 'http://app.bullstech.cn/test/api/task',
       form: {
         name: '',
         region: '',
@@ -33,20 +36,23 @@ export default {
     };
   },
   mounted() {
-    this.taskAdd()
+    console.log('5201314', this.tasksLisk)
   },
   methods: {
-    taskAdd() {
-      axios.post('http://app.bullstech.cn/test/api/task/',this.form )
-        .then(function(response) {
-          alert('添加成功')
-          console.log('123', response);
-        })
-        .catch(function(error) {
-          console.log('456', error);
-        })
-    }
+    editClick(item, id) {
+      this.isShowDialog = true
+      var vm = this
+      axios.put(vm.apiUrl + '/' + id, vm.item).then((res) => {
+        vm.getTask()
+      })
+
+    },
   }
 }
 </script>
+
+<style >
+
+</style>
+
 

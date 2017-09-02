@@ -6,7 +6,6 @@ import myTasks from '../pages/task/mytasks.vue'
 import taskTrack from '../pages/task/tasktrack.vue'
 import taskManagement from '../pages/task/taskmanagement.vue'
 export default new VueRouter({
-    mode: 'history',
     routes: [{
             path: '/taskHall',
             component: taskHall,
