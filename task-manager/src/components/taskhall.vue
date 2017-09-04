@@ -1,52 +1,61 @@
 <template>
-  <div class="detail-wrap">
-    <div class="detail-left">
-      <div class="product-board">
-        <ul>
-         <router-link v-for="item in products" :to="{path:item.path}" tag="li"
-         active-class="active">
-         	{{item.name}}
-         </router-link>
-        </ul>
-      </div>
+    <div detail-wrap>
+        <el-row class="tac detail-left">
+            <el-col :span="3">
+                <el-menu default-active="2" class="el-menu-vertical-demo" theme="dark">
+                    <router-link v-for="item in products" :to="{path:item.path}" tag="li" active-class="active">
+                        <el-menu-item index="2"> {{item.name}}</el-menu-item>
+                    </router-link>
+                </el-menu>
+            </el-col>
+        </el-row>
+        <div class="detail-right">
+            <keep-alive>
+                <router-view></router-view>
+            </keep-alive>
+        </div>
     </div>
-    <div class="detail-right">
-      <keep-alive>
-        <router-view></router-view>
-      </keep-alive>
-    </div>
-  </div>
 </template>
 <script>
 export default {
     data() {
         return {
             products: [
+              
                 {
-                    name: '任务添加',
+                    name: '任务列表',
+                    path: 'mytasks',
+                },
+                  {
+                    name: '我的任务',
                     path: 'taskadd',
                 },
                 {
-                    name: '我的任务',
+                    name: '统计',
                     path: 'mytasks',
-                },
-                {
-                    name: '任务跟踪',
-                    path: 'tasktrack',
-                },
-                {
-                    name: '任务管理',
-                    path: 'taskmanagement',
                 }
             ],
         }
     },
     computed: {
+    },
+    methods: {
     }
 }
 </script>
 
 <style>
+.el-menu li {
+    list-style: none;
+    padding-right: 65px;
+}
+.el-menu--dark {
+    background-color: #324157;
+    padding-bottom: 132px;
+}
+.el-col-3 {
+    width: 97.5%;
+}
 .detail-wrap {
     width: 1200px;
     margin: 0 auto;

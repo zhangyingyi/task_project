@@ -9,6 +9,7 @@
     <script src="https://cdn.bootcss.com/vue-router/2.7.0/vue-router.min.js"></script>
     <script src="https://cdn.bootcss.com/axios/0.16.2/axios.min.js"></script>
     <script src="https://cdn.bootcss.com/element-ui/1.4.2/index.js"></script>
+    <script src="http://cdn.bootcss.com/moment.js/2.18.1/moment.min.js"></script>
 </head>
 
 <body>
@@ -16,3 +17,129 @@
 </body>
 
 </html>
+
+
+
+<!--<div class="detail-wrap">
+    <div class="detail-left">
+      <div class="product-board">
+        <ul>
+         <router-link v-for="item in products" :to="{path:item.path}" tag="li"
+         active-class="active">
+         	{{item.name}}
+         </router-link>
+        </ul>
+      </div>
+    </div>
+    <div class="detail-right">
+      <keep-alive>
+        <router-view></router-view>
+      </keep-alive>
+    </div>
+  </div>-->
+
+
+<!--<div class="el-table el-table--fit el-table--border el-table--enable-row-hover el-table--enable-row-transition" style="width: 145%;">
+      <div class="hidden-columns">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div class="el-table__header-wrapper">
+        <table cellspacing="0" cellpadding="0" border="0" class="el-table__header" style="width: 885px;">
+          <colgroup><col name="el-table_1_column_1" width="145"><col name="el-table_1_column_2" width="145"><col name="el-table_1_column_3" width="145"><col name="el-table_1_column_4" width="145"><col name="el-table_1_column_5" width="150"><col name="gutter" width=""></colgroup>
+          <thead>
+            <tr>
+              <th colspan="1" rowspan="1" class="el-table_1_column_1 is-leaf">
+                <div class="cell">负责人</div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_2 is-leaf">
+                <div class="cell">任务名称</div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_3 is-leaf">
+                <div class="cell">状态情况</div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_4 is-leaf">
+                <div class="cell">开始日期</div>
+              </th>
+               <th colspan="1" rowspan="1" class="el-table_1_column_4 is-leaf">
+                <div class="cell">结束日期</div>
+              </th>
+              <th colspan="1" rowspan="1" class="el-table_1_column_5 is-leaf">
+                <div class="cell">操作</div>
+              </th>
+              <th class="gutter" style="width: 0px;"></th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+      <div class="el-table__body-wrapper">
+        <table cellspacing="0" cellpadding="0" border="0" class="el-table__body" style="width: 885px;">
+          <colgroup><col name="el-table_1_column_1" width="145"><col name="el-table_1_column_2" width="145"><col name="el-table_1_column_3" width="145"><col name="el-table_1_column_4" width="145"><col name="el-table_1_column_5" width="150"></colgroup>
+          <tbody>
+            <template v-for="item in tasksLisk">
+              <tr class="el-table__row">
+                <td class="el-table_1_column_1">
+                  <div class="cell">
+                    <span style="margin-left: 10px;">{{item.name}}</span>
+                  </div>
+                </td>
+                <td class="el-table_1_column_2">
+                  <div class="cell">
+                    <span style="margin-left: 10px;">{{item.taskname}}</span>
+                  </div>
+                </td>
+                <td class="el-table_1_column_1">
+                  <div class="cell">
+                    <span style="margin-left: 10px;">{{item.region}}</span>
+                  </div>
+                </td>
+                <td class="el-table_1_column_1">
+                  <div class="cell">
+                    <span>
+                      <div class="el-popover" style="display: none;">
+                      </div>
+                      <div class="name-wrapper">
+                        <span class="el-tag">{{getDatetime(item.value6)}}</span>
+                      </div>
+                    </span>
+                  </div>
+                </td>
+                  <td class="el-table_1_column_1">
+                  <div class="cell">
+                    <span>
+                      <div class="el-popover" style="display: none;">
+                      </div>
+                      <div class="name-wrapper">
+                        <span class="el-tag">{{getDatetime(item.value7)}}</span>
+                      </div>
+                    </span>
+                  </div>
+                </td>
+                <td class="el-table_1_column_1">
+                  <div class="cell">
+                    <button type="button" class="el-button el-button--default el-button--small">
+                      <span @click="editClick(item)">编辑</span>
+                    </button>
+                    <button type="button" class="el-button el-button--danger el-button--small">
+                      <span @click="taskdelete(item._id)">删除</span>
+                    </button>
+                  </div>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+      <div class="el-table__column-resize-proxy" style="display: none;"></div>
+      <div class="resize-triggers">
+        <div class="expand-trigger">
+          <div style="width: 886px; height: 201px;"></div>
+        </div>
+        <div class="contract-trigger"></div>
+      </div>
+    </div>
+    <my-dialog :is-show="isShowDialog" :tasksLisk="tasksLisk" @on-close="closeDialog" :editData="editData">
+    </my-dialog>-->
